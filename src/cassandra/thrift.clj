@@ -18,7 +18,7 @@
 (defn insert-single
   [client table key family col-val encoder & opts]
   (let [timestamp (get opts :timestamp (System/currentTimeMillis))
-        block-for (get opts :block-for 0)]
+        block-for (get opts :block-for false)]
     (.insert client 
              table 
              key 
